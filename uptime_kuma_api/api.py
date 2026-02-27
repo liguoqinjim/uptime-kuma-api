@@ -751,6 +751,7 @@ class UptimeKumaApi(object):
             # DNS
             dns_resolve_server: str = "1.1.1.1",
             dns_resolve_type: str = "A",
+            conditions: list = None,
 
             # MQTT
             mqttUsername: str = "",
@@ -914,6 +915,7 @@ class UptimeKumaApi(object):
         data.update({
             "dns_resolve_server": dns_resolve_server,
             "dns_resolve_type": dns_resolve_type,
+            "conditions": conditions if conditions is not None else [],
         })
 
         # MQTT
